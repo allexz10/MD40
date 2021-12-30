@@ -1,0 +1,13 @@
+<section>
+  <h1>{{ title }}</h1>
+  <button (click)="toggleShowDescription()">Show</button>
+  <span>{{ showDescription }}</span>
+  <div *ngIf="showDescription">
+    <span class="about__title">About:</span>
+    <span>{{ about.description | uppercase }}</span>
+    <span class="about__title">Ratings:</span>
+    <span>{{ about.rating | number: "1.0-1" }}</span>
+    <span class="about__title">Date:</span>
+    <span>{{ about.created | date: "dd.MM.y" }}</span>
+  </div>
+</section>

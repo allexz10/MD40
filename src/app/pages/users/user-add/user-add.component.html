@@ -1,0 +1,31 @@
+<form class="form" [formGroup]="addUserForm">
+  <div class="input__wrapper">
+    <label for="name">Name</label>
+    <input class="input" type="text" id="name" formControlName="name" />
+  </div>
+  <div class="input__wrapper">
+    <label for="surname">Surname</label>
+    <input class="input" type="text" id="surname" formControlName="surname" />
+  </div>
+
+  <div class="input__wrapper" *ngIf="showCountrySelect">
+    <label for="Country">Country</label>
+    <select class="input" id="country" formControlName="country">
+      <option [value]="country.code" *ngFor="let country of countries">
+        {{ country.title }}
+      </option>
+    </select>
+  </div>
+  <div class="checkbox__wrapper">
+    <input
+      type="checkbox"
+      id="showCountryCheckbox"
+      [(ngModel)]="showCountrySelect"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <label for="showCountryCheckbox">Show country select</label>
+  </div>
+  <button [disabled]="addUserForm.invalid" type="button" (click)="addUser()">
+    Add new user
+  </button>
+</form>

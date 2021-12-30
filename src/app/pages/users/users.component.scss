@@ -1,0 +1,25 @@
+.content__container {
+  padding: 10px;
+}
+
+.button__container {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.button {
+  padding: 10px;
+  width: 90px;
+  border-radius: 8px;
+  background-color: #52bd72;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all ease 0.5s;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 0.25rem #96d6a9;
+  }
+}

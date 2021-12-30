@@ -1,0 +1,16 @@
+<div class="button__container">
+  <button class="button" type="button" (click)="toggleShowForm()">
+    {{ !showForm ? "Add user" : "Show List" }}
+  </button>
+</div>
+
+<div class="content__container">
+  <app-user-list [users]="users" *ngIf="!showForm"></app-user-list>
+</div>
+
+<div class="content__container">
+  <app-user-add
+    (addUserEvent)="addUser($event)"
+    *ngIf="showForm"
+  ></app-user-add>
+</div>

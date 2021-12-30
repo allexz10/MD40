@@ -1,0 +1,13 @@
+<div class="header">
+  <span class="logo">My application</span>
+  <div class="links">
+    <a
+      class="link"
+      *ngFor="let menuItem of menu"
+      [routerLink]="menuItem.path"
+      routerLinkActive="active"
+    >
+      {{ menuItem.title }}
+    </a>
+  </div>
+</div>

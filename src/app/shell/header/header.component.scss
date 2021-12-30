@@ -1,0 +1,32 @@
+.header {
+  background-color: lightgray;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo{
+   font-size: 25px;
+   font-weight: 700; 
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  padding: 10px;
+  cursor: pointer; 
+  &.active {
+    border-bottom: 1px solid dodgerblue;
+  }
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid deeppink;
+  }
+}
