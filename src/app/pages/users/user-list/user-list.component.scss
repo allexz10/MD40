@@ -16,4 +16,8 @@ table {
           background-color: #dddddd;
       }
   }
-  
+
+  .edit,
+  .remove{
+    cursor: pointer;
+  }

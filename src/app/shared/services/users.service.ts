@@ -26,6 +26,10 @@ export class UsersService {
         return this.users
     }
 
+    getUser(id: string): User | undefined {
+        return this.users.find(user => user.id === id);
+    }
+
     addUser(query: AddUserQuery): User[] {
         const newUser = {
             id: idGenerator(),
@@ -35,6 +39,23 @@ export class UsersService {
         this.users.push(newUser);
         return this.users
 
+    }
+
+    editUser(query: AddUserQuery, id: string): User[] {
+
+        this.users = this.users.map(user => {
+            if (user.id === id) {
+                return { ...user, ...query }
+            } else {
+                return user
+            }
+        });
+        return this.users
+    }
+
+    removeUser(id: string): User[] {
+        this.users = this.users.filter((it) => it.id !== id);
+        return this.users;
     }
 
 }

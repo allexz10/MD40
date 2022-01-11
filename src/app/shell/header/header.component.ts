@@ -10,18 +10,23 @@ export class HeaderComponent implements OnInit {
   menu = [
     {
       path: "users",
-      title:"Users",
+      title: "Users",
     },
     {
       path: "organaizer",
-      title:"Organaizer",
+      title: "Organaizer",
+    },
+    {
+      path: "characters",
+      title: 'Rick&Morty'
+
     },
     {
       path: "about",
-      title:"About",
+      title: "About",
     },
   ]
-  
+
   ngOnInit(): void {
   }
 

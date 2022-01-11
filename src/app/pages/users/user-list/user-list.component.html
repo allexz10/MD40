@@ -1,11 +1,25 @@
 <table *ngIf="users">
-    <tr>
-      <th *ngFor="let title of tableHeadTitles">{{ title }}</th>
-    </tr>
-    <tr *ngFor="let user of users">
-      <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.surname }}</td>
-      <td>{{ user.country | uppercase }}</td>
-    </tr>
-  </table>
+  <tr>
+    <th *ngFor="let title of tableHeadTitles">{{ title }}</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.id }}</td>
+    <td>{{ user.name | titlecase }}</td>
+    <td>{{ user.surname | titlecase }}</td>
+    <td>{{ user.country | uppercase }}</td>
+    <td>
+      <fa-icon
+        class="edit"
+        [routerLink]="['/users', user.id]"
+        [icon]="faEdit"
+      ></fa-icon>
+    </td>
+    <td>
+      <fa-icon
+        class="remove"
+        [icon]="faTrash"
+        (click)="removeUser(user.id)"
+      ></fa-icon>
+    </td>
+  </tr>
+</table>

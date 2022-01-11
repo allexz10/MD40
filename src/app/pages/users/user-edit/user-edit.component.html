@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="addUserForm">
+<form class="form" [formGroup]="editUserForm">
   <div class="input__wrapper">
     <label for="name">Name</label>
     <input class="input" type="text" id="name" formControlName="name" />
@@ -8,7 +8,7 @@
     <input class="input" type="text" id="surname" formControlName="surname" />
   </div>
 
-  <div class="input__wrapper" *ngIf="showCountrySelect">
+  <div class="input__wrapper">
     <label for="Country">Country</label>
     <select class="input" id="country" formControlName="country">
       <option [value]="country.code" *ngFor="let country of countries">
@@ -16,21 +16,13 @@
       </option>
     </select>
   </div>
-  <div class="checkbox__wrapper">
-    <input
-      type="checkbox"
-      id="showCountryCheckbox"
-      [(ngModel)]="showCountrySelect"
-      [ngModelOptions]="{ standalone: true }"
-    />
-    <label for="showCountryCheckbox">Show country select</label>
-  </div>
+
   <button
-    [disabled]="addUserForm.invalid"
+    [disabled]="editUserForm.invalid"
     type="button"
-    (click)="addUser()"
+    (click)="editUser()"
     [routerLink]="['/users']"
   >
-    Add new user
+   Save
   </button>
 </form>

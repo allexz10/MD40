@@ -1,0 +1,11 @@
+<section class="character__section">
+    <div class="character" *ngIf="character$ | async as character">
+        <span>{{ "ID: " + character.id }}</span>
+        <span>{{ "Name: " + character.name }}</span>
+        <span>{{ "Status: " + character.status }}</span>
+        <span>{{ "Specie: " + character.species }}</span>
+        <img [src]="character.image" width="300" alt="image" />
+        <button class="button" [routerLink]="['/characters']">Back</button>
+      </div>
+      
+</section>

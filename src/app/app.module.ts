@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShellComponent } from './shell/shell.component';
@@ -10,6 +11,10 @@ import { TodoComponent } from './pages/todo/todo.component';
 import { UserListComponent } from './pages/users/user-list/user-list.component';
 import { UserAddComponent } from './pages/users/user-add/user-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserEditComponent } from './pages/users/user-edit/user-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CharactersComponent } from './pages/characters/characters.component';
+import { CharacterComponent } from './pages/characters/character/character.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UsersComponent,
     TodoComponent,
     UserListComponent,
-    UserAddComponent
+    UserAddComponent,
+    UserEditComponent,
+    CharactersComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

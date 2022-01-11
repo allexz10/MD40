@@ -1,16 +1,35 @@
-<div class="button__container">
-  <button class="button" type="button" (click)="toggleShowForm()">
-    {{ !showForm ? "Add user" : "Show List" }}
+<div class="content__container" *ngIf="mode === usersPageViewType.LIST">
+  <button
+    class="button"
+    type="button"
+    (click)="showAddNewUserForm()"
+    [routerLink]="['/users', 'new']"
+  >
+    Add user
   </button>
+  <app-user-list [users]="users"></app-user-list>
 </div>
 
-<div class="content__container">
-  <app-user-list [users]="users" *ngIf="!showForm"></app-user-list>
+<div class="content__container" *ngIf="mode === usersPageViewType.ADD">
+  <button
+    class="button"
+    type="button"
+    (click)="showUserList()"
+    [routerLink]="['/users']"
+  >
+    Back
+  </button>
+  <app-user-add (addUserEvent)="addUser($event)"></app-user-add>
 </div>
 
-<div class="content__container">
-  <app-user-add
-    (addUserEvent)="addUser($event)"
-    *ngIf="showForm"
-  ></app-user-add>
+<div class="content__container" *ngIf="mode === usersPageViewType.EDIT">
+  <button
+    class="button"
+    type="button"
+    (click)="showAddNewUserForm()"
+    [routerLink]="['/users']"
+  >
+  Back
+  </button>
+ <app-user-edit [user]="user" (editUserEvent)="editUser($event, user?.id)"></app-user-edit>
 </div>
